@@ -10,7 +10,7 @@ describe Piece, type: :model do
         # on the existing data.
         piece.id = '692a68c5-af1e-4124-80f1-cbf38be51abe'
         expect(piece.images.count).to be > 0
-      end      
+      end
 
       it 'returns an empty list when no images are available' do
         piece.id = 'blah'

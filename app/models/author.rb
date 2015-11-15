@@ -1,7 +1,10 @@
-class Author
-  attr_accessor :artist_id, :full_name, :cited_name, :role, :nationality, :birth_date, :death_date, :birth_place, :death_place
-  
-  def initialize(h={})
-    h.each { |k,v| send("#{k}=",v) }
+class Author < ActiveRecord::Base
+  has_many :pieces
+
+  def self.from_cmoa_json(args={})
+    args["institutional_id"] = args.delete("artist_id") if args["artist_id"]
+    a = Author.new(args)
+    a.institution = "cmoa"
+    a
   end
 end
