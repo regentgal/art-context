@@ -10,9 +10,7 @@ class Piece
 
   def images
     return [] unless id
-
-    images_path = "/Users/jln/Desktop/all_cmoa_collection_images"
-    image_glob = "#{images_path}/#{id}*"
-    Dir.glob(image_glob)
+    image_glob = "#{Rails.root.join('app', 'assets', 'images')}/#{id}*"
+    Dir[image_glob].map { |i| File.basename(i) }
   end
 end

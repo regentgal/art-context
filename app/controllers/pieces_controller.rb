@@ -1,5 +1,5 @@
 class PiecesController < ActionController::Base
   def show
-    @piece = Piece.new(id: "692a68c5-af1e-4124-80f1-cbf38be51abe")
+    @piece = Piece.new(id: "b4bd0dce-4bc7-4ff8-8775-87b03de199d7")
   end
 end
