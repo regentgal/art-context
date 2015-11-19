@@ -1,7 +1,7 @@
 class Piece < ActiveRecord::Base
   belongs_to :author
 
-  def self.from_cmoa_json(args={})
+  def self.from_cmoa_json(args = {})
     # FIXME: This likely isn't the best place for this method.
     args['institutional_id'] = args.delete('id') if args['id']
     p = new(args)
